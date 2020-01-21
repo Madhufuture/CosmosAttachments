@@ -1,0 +1,59 @@
+﻿@model Resorts.Frontend.Models.ResortInfo
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>ResortInfo</h4>
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form method="post" enctype="multipart/form-data" asp-controller="Resorts" asp-action="Create">
+            @Html.AntiForgeryToken()
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @*<div class="form-group">
+                    <label asp-for="ResortId" class="control-label"></label>
+                    <input asp-for="ResortId" class="form-control" />
+                    <span asp-validation-for="ResortId" class="text-danger"></span>
+                </div>*@
+            <div class="form-group">
+                <label asp-for="ResortName" class="control-label"></label>
+                <input asp-for="ResortName" class="form-control" />
+                <span asp-validation-for="ResortName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            @*<div class="form-group">
+                    <label asp-for="AltLink" class="control-label"></label>
+                    <input asp-for="AltLink" class="form-control" />
+                    <span asp-validation-for="AltLink" class="text-danger"></span>
+                </div>*@
+
+
+            <div class="form-group">
+                <div class="col-md-10">
+                    <p>Upload one or more files using this form:</p>
+
+                    <input type="file" name="files" multiple />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
