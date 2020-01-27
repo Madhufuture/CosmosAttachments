@@ -4,7 +4,7 @@ Attachments in Cosmos DB are great feature to hold all blob information related 
 
 ## Installation
 
-Use the package manager [nuget](https://pip.pypa.io/en/stable/) to install dependencies.
+Use the package manager [nuget](https://www.nuget.org/packages) to install dependencies.
 
 ```bash
 Microsoft.Azure.DocumentDB
